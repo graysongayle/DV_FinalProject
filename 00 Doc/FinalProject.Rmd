@@ -127,6 +127,8 @@ This map shows geographically where the lowest and highest pupil teacher ratio's
 #Graph_title
 ### Data Summary:
 
+This scatter plot shows the unemployment rates of several different countries. There are three plots which show male, female, and total unemployment rates of the countries. The X axis shows the unemployement rates for 2002 and the Y axis shows the unemployment rates for 2012. This means that the data above the line (Green), have increased unemployment rates and the data points below the line (red) have decreased in unemployment rates. Female rates were more steady while male rate provided large variability. 
+
 ![](1.png)
 
 *** 
@@ -135,11 +137,13 @@ This map shows geographically where the lowest and highest pupil teacher ratio's
 
 ### Data Summary:
 
-This map shows us the distribution of children completing their primary educations. 
+This map shows us the distribution of children who are not in primary school. The map shows that the vast majority of countries have very low rates of children out of school. There are however several somewhat surprising outliers. The United States has a much larger population of children out of school than any other North American or European country. While african countries do lag behind most other contients, Nigeria has a huge out-of-school child population, relativley speaking. 
 
 ![](2.png)
 
 *** 
+
+This graph shows a trend of countries that are classified by the United Nations as "Least Developed" in which more children are finishing their primary more and more as the years go on. However, it appears that starting in 2011, the rate of children finishing their primary education seemes to be plateauing in the high 60% range. Before this shift, there are constant linear growth in this area. 
 
 ![](3.png)
 
@@ -148,6 +152,8 @@ This map shows us the distribution of children completing their primary educatio
 #Graph_title
 
 ### Data Summary:
+
+This cross-tab shows spending on various levels of education by several different countries. Niger, for example, has a relativley low spending percentage on primary education at 10%, but then spends a relativley huge amount on secondary education at 25%. Another interesting case is Guyana, which spends low amounts on primary and secondary education, but spends huge amounts on their tertiary education. 
 
 ![](4.png)
 
