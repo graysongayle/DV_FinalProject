@@ -75,8 +75,13 @@ head(df)
 
 ### Data Summary:
 
-
 This box plot shows the student-teacher ratios for the years 2000 and 2012 for both primary and secondary schools.  We can see that in both years the student-teacher ratio for secondary schools is smaller than primary schools.  We also can see that there has been an imporvement in student teacher ratios from 2000 to 2012.  The interquartiles range has also decreased which means there is less spread in the data.
+
+#Process
+1. Place indicator name (student teacher ratio) on columns
+2. Place 2000 statistic and 2012 statistic on rows
+3. Add box plot from Show Me widget
+4. Color on 2000 statistic
 
 ![](10.png)
 
@@ -87,6 +92,12 @@ This box plot shows the student-teacher ratios for the years 2000 and 2012 for b
 ### Data Summary:
 
 This histogram shows the student teacher ratio's in 2000.  This graph shows that the student teacher ratios have a left skewed model.  Most countries fall under the 10-30 ratio bin.  However, some countries push extremely high ratios of 60 students per teacher.  One country has a student teacher ratio of under 10.
+
+#Process
+1. Create a bin calculation with size 10 
+2. Put (blue) bin on columns
+3. Place 2000 statistic on rows as count aggregate function
+4. Produces a histogram
 
 ![](11.png)
 
@@ -100,6 +111,12 @@ This histogram shows the student teacher ratio's in 2000.  This graph shows that
 
 This scatterplot juxtaposes student teacher ratios from primary education to secondary education.  From the years 2000 to 2012, we can see that values on the plot have a linear trend.  The values that lie under the trend line depict an overall decrease in student teacher ratios (which is good).  The average student teacher ratio for primary education is 27.7 and secondary educaiton is 18.2. This is expected because higher education usually tends to have more teachers per student.
 
+#Process
+1. 2002 statistic on column
+2. 2012 statistic on row
+3. Indicator name (unemployment rates) on columns
+4. Produces a scatter plot
+
 ![](12.png)
 
 ***
@@ -108,7 +125,13 @@ This scatterplot juxtaposes student teacher ratios from primary education to sec
 
 ### Data Summary:
 
-This crosstab shows which countries have some of the higher pupil-teacher ratio's. Central African Republic has the highest ratio with about 80 students per teacher in primary education and 68 students per teacher in secondary education.   This cross tab only shows those with ratios greater than 45 in primary education.  The color represents the mins and maxes of the data displayed.  
+This crosstab shows which countries have some of the higher pupil-teacher ratio's. Central African Republic has the highest ratio with about 80 students per teacher in primary education and 68 students per teacher in secondary education.   This cross tab only shows those with ratios greater than 45 in primary education.  The color represents the mins and maxes of the data displayed. 
+
+#Process
+1. Indicator name on Column (Pupil-teacher ratio's for primary and secondary education)
+2. Country name on rows
+3. Place agrregate 2012 statistic on text
+4. Filter country name by greater than a 40 student teacher ratio
 
 ![](13.png)
 
@@ -120,12 +143,20 @@ This crosstab shows which countries have some of the higher pupil-teacher ratio'
 
 This map shows geographically where the lowest and highest pupil teacher ratio's exist.  We can see that the highest values come from African nations with other high values in Central America and South Eastern Asian countries.  Europe, US, and East Asia have some of the lowest ratio's, likely due to greatest economic development.
 
+#Process
+1. Place latitude and longitude on column and row
+2. Place 2012 statistic on to size and color
+3. Filter by indicator name student teacher ratio
+
 ![](14.png)
 
 *** 
 
-#Graph_title
+#Unemployment from 2002 to 2012
+
 ### Data Summary:
+
+This scatter plot shows the unemployment rates of several different countries. There are three plots which show male, female, and total unemployment rates of the countries. The X axis shows the unemployement rates for 2002 and the Y axis shows the unemployment rates for 2012. This means that the data above the line (Red), have increased unemployment rates and the data points below the line (Green) have decreased in unemployment rates. Female rates were more steady while male rate provided large variability. 
 
 ![](1.png)
 
@@ -135,31 +166,9 @@ This map shows geographically where the lowest and highest pupil teacher ratio's
 
 ### Data Summary:
 
-This map shows us the distribution of children completing their primary educations. 
+This map shows us the distribution of children who are not in primary school. The map shows that the vast majority of countries have very low rates of children out of school. There are however several somewhat surprising outliers. The United States has a much larger population of children out of school than any other North American or European country. While african countries do lag behind most other contients, Nigeria has a huge out-of-school child population, relativley speaking. 
 
 ![](2.png)
-
-*** 
-
-![](3.png)
-
-*** 
-
-#Graph_title
-
-### Data Summary:
-
-![](4.png)
-
-*** 
-
-#Cross-tab: Education Staff Compensation per Country
-
-### Data Summary:
-
-This cross-tab shows the percentage of money alloted to education staff compenation that comes from total public institution expenditures in primary, secondary and tertiary public institutions. We can see that the largest percentages given to the education staff are in Niger, Guyana and Cameroon. This may be indicative of their overall economy.
-
-![](5.png)
 
 *** 
 
@@ -167,9 +176,21 @@ This cross-tab shows the percentage of money alloted to education staff compenat
 
 ### Data Summary: 
 
-This trendline shows the percent of kids who complete primary school amongst the least developed countries according to the UN. It can be seen here that there is an upward positive trend as the years progress. More students are completing primary school. This may also shed some light on these countries and their corresponding wealth.
+This graph shows a trend of countries that are classified by the United Nations as "Least Developed" in which more children are finishing their primary education more and more as the years go on. However, it appears that starting in 2011, the rate of children finishing their primary education seemes to be plateauing in the high 60% range. Before this shift, there are constant linear growth in this area. This may also shed some light on these countries and their corresponding wealth.
 
-![](6.png)
+![](3.png)
+
+*** 
+
+
+#Cross-tab: Education Staff Compensation per Country
+
+### Data Summary:
+
+This cross-tab shows the percentage of money alloted to education staff compenation that comes from total public institution expenditures in primary, secondary and tertiary public institutions. We can see that the largest percentages given to the education staff are in Niger, Guyana and Cameroon. This may be indicative of their overall economy. Niger, for example, has a relativley low spending percentage on primary education at 10%, but then spends a relativley huge amount on secondary education at 25%. Another interesting case is Guyana, which spends low amounts on primary and secondary education, but spends huge amounts on their tertiary education. 
+
+
+![](5.png)
 
 *** 
 
@@ -179,6 +200,13 @@ This trendline shows the percent of kids who complete primary school amongst the
 
 This cross-tab shows the literacy rates amongst various countries' male and female populations. Our results point to decreasing and increase percentages. For example, the Central Afrifan Republic has the largest decreasing literacy rate while Ghana has the largest increasing literacy rates. It can also be observed that the increases in literacy rates are larger in the female populations than in the male populations. This could be due to social change or more women entering school.
 
+#Process
+1. Indicator Name on Columns
+2. Country Name on rows
+3. Filter Indicator names
+4. Created Calculated Field --> Agg(Difference) from 2009 to 2010
+5. Filter at 3.5 percentage difference in all education levels
+
 ![](7.png)
 
 *** 
@@ -187,7 +215,7 @@ This cross-tab shows the literacy rates amongst various countries' male and fema
 
 ### Data Summary: 
 
-This plot shows the average percentage of GDP per capita that is spent per student. These percentages are plotted as individual data points across the the years 2006 to 2012. It is intersting to see that government spending has only increased in tertiary education and remained constant in primary and secondary institutions. Higher education could be becoming more valued as time increases.
+This plot shows the average percentage of GDP per capita that is spent per student. These percentages are plotted as individual data points across the the years 2006 to 2012. It is intersting to see that government spending has only increased in tertiary education and remained constant in primary and secondary institutions. The importance of higher education has probably increased from 2006 to 2012.
 
 ![](8.png)
 
