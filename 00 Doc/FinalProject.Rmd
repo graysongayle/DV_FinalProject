@@ -125,16 +125,17 @@ This map shows geographically where the lowest and highest pupil teacher ratio's
 *** 
 
 #Graph_title
-
 ### Data Summary:
 
 ![](1.png)
 
 *** 
 
-#Graph_title
+# Global Map of Number of Children Completing Primary School
 
 ### Data Summary:
+
+This map shows us the distribution of children completing their primary educations. 
 
 ![](2.png)
 
@@ -152,41 +153,51 @@ This map shows geographically where the lowest and highest pupil teacher ratio's
 
 *** 
 
-#Graph_title
+#Cross-tab: Education Staff Compensation per Country
 
 ### Data Summary:
+
+This cross-tab shows the percentage of money alloted to education staff compenation that comes from total public institution expenditures in primary, secondary and tertiary public institutions. We can see that the largest percentages given to the education staff are in Niger, Guyana and Cameroon. This may be indicative of their overall economy.
 
 ![](5.png)
 
 *** 
 
-#Graph_title
+# Time Progression of Percentage of Childreng Completing Primary School
 
-### Data Summary:
+### Data Summary: 
+
+This trendline shows the percent of kids who complete primary school amongst the least developed countries according to the UN. It can be seen here that there is an upward positive trend as the years progress. More students are completing primary school. This may also shed some light on these countries and their corresponding wealth.
 
 ![](6.png)
 
 *** 
 
-#Graph_title
+# Male and Female Literacy Rates per Country
 
 ### Data Summary:
+
+This cross-tab shows the literacy rates amongst various countries' male and female populations. Our results point to decreasing and increase percentages. For example, the Central Afrifan Republic has the largest decreasing literacy rate while Ghana has the largest increasing literacy rates. It can also be observed that the increases in literacy rates are larger in the female populations than in the male populations. This could be due to social change or more women entering school.
 
 ![](7.png)
 
 *** 
 
-#Graph_title
+# Government Expenditure Per Student
 
-### Data Summary:
+### Data Summary: 
+
+This plot shows the average percentage of GDP per capita that is spent per student. These percentages are plotted as individual data points across the the years 2006 to 2012. It is intersting to see that government spending has only increased in tertiary education and remained constant in primary and secondary institutions. Higher education could be becoming more valued as time increases.
 
 ![](8.png)
 
 *** 
 
-#Graph_title
+# Gross Intake Ratio for First Grade in Primary Education in Niger
 
 ### Data Summary:
+
+This visualization plots the gross intake ratio for first graders in Niger from the years 2000 to 2013. There is an increasing trend in intake and peaks in the year 2009. It is quite possible that in 2009 more money was allocated to Niger's primary education, thus they were able to teach more primary students with an increased education budget.
 
 ![](9.png)
 
