@@ -55,11 +55,11 @@ head(df)
 * Most of the script is wrapped in a call to renderPlot. This is an expression that generates a histogram. renderPlot indicates that the expression is "reactive" and should automatically re-execute whenver input changes. It also specifies that the output type is a plot.
 
 ### Shiny App Walkthrough:
-* link to our app:
+* link to our shiny app: https://graysong.shinyapps.io/Final_Project
 * Dashboard App:
-  + Bar Chart
-  + Cross Tab + KPI
   + Scatter Plot
+  + Barchart
+  + Cross tab + KPI
 
 
 
@@ -116,6 +116,8 @@ This scatterplot juxtaposes student teacher ratios from primary education to sec
 2. 2012 statistic on row
 3. Indicator name (unemployment rates) on columns
 4. Produces a scatter plot
+
+SHINY SCATTER PLOT: https://graysong.shinyapps.io/Final_Project
 
 ![](12.png)
 
@@ -183,6 +185,13 @@ This graph shows a trend of countries that are classified by the United Nations 
 *** 
 
 
+# Number of children out of school from 2000 to 2012
+
+SHINY BAR CHART:  https://graysong.shinyapps.io/Final_Project
+
+***
+
+
 #Cross-tab: Education Staff Compensation per Country
 
 ### Data Summary:
@@ -206,6 +215,8 @@ This cross-tab shows the literacy rates amongst various countries' male and fema
 3. Filter Indicator names
 4. Created Calculated Field --> Agg(Difference) from 2009 to 2010
 5. Filter at 3.5 percentage difference in all education levels
+
+SHINY CROSS TAB: https://graysong.shinyapps.io/Final_Project
 
 ![](7.png)
 
