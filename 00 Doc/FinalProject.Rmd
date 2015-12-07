@@ -1,5 +1,5 @@
 ---
-title: "DV_SProject"
+title: "Final Project CS329E : Presenting education research and statistics"
 output: html_document
 Author: "Grayson Gayle, Madeline Nash, David Schluckebier"
 Date: December 7, 2015 
@@ -68,19 +68,126 @@ head(df)
 
 #Visualizations:
 
+***
+
+#BoxPlot of Student-Teacher Ratios (Methodology Step One)
+
+
+### Data Summary:
+
+
 This box plot shows the student-teacher ratios for the years 2000 and 2012 for both primary and secondary schools.  We can see that in both years the student-teacher ratio for secondary schools is smaller than primary schools.  We also can see that there has been an imporvement in student teacher ratios from 2000 to 2012.  The interquartiles range has also decreased which means there is less spread in the data.
 
 ![](10.png)
+
+***
+
+#Histogram of Student-Teacher Ratios (Methodology Step Two)
+
+### Data Summary:
+
+This histogram shows the student teacher ratio's in 2000.  This graph shows that the student teacher ratios have a left skewed model.  Most countries fall under the 10-30 ratio bin.  However, some countries push extremely high ratios of 60 students per teacher.  One country has a student teacher ratio of under 10.
+
 ![](11.png)
+
+***
+
+#Scatter Plot of Student Teacher Ratios (Methodology Step Three)
+
+### Data Summary:
+
+(Also on Dashboard)
+
+This scatterplot juxtaposes student teacher ratios from primary education to secondary education.  From the years 2000 to 2012, we can see that values on the plot have a linear trend.  The values that lie under the trend line depict an overall decrease in student teacher ratios (which is good).  The average student teacher ratio for primary education is 27.7 and secondary educaiton is 18.2. This is expected because higher education usually tends to have more teachers per student.
+
 ![](12.png)
+
+***
+
+#CrossTab of Pupil-Teacher Ratios (Methodology Step Four)
+
+### Data Summary:
+
+This crosstab shows which countries have some of the higher pupil-teacher ratio's. Central African Republic has the highest ratio with about 80 students per teacher in primary education and 68 students per teacher in secondary education.   This cross tab only shows those with ratios greater than 45 in primary education.  The color represents the mins and maxes of the data displayed.  
+
 ![](13.png)
+
+*** 
+
+#Map of Student Teacher Ratios (Methodology Step Five)
+
+### Data Summary:
+
+This map shows geographically where the lowest and highest pupil teacher ratio's exist.  We can see that the highest values come from African nations with other high values in Central America and South Eastern Asian countries.  Europe, US, and East Asia have some of the lowest ratio's, likely due to greatest economic development.
+
 ![](14.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](1.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](2.png)
+
+*** 
+
 ![](3.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](4.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](5.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](6.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](7.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](8.png)
+
+*** 
+
+#Graph_title
+
+### Data Summary:
+
 ![](9.png)
+
+*** 

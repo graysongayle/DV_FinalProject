@@ -10,10 +10,9 @@ dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("ST Ratio's Scatterplots", tabName = "Scatterplot", icon = icon("dashboard")),
-      menuItem("Barchart", tabName = "barchart", icon = icon("th")),
-      menuItem("Blending", tabName = "blending", icon = icon("th")),
-      menuItem("Map", tabName = "map", icon = icon("th")),
-      menuItem("Table", tabName = "table", icon = icon("th"))
+      menuItem("# of Ch. out of School BC", tabName = "Barchart", icon = icon("th")),
+      menuItem("CrossTab", tabName = "CrossTab", icon = icon("th"))
+
     )
   ),
   dashboardBody(
@@ -30,14 +29,24 @@ dashboardPage(
       ,
       
       # Third tab content
-      tabItem(tabName = "blending",
-              actionButton(inputId = "clicks",  label = "Click me"),
-              plotOutput("distPlot3")
+      tabItem(tabName = "Barchart",
+              actionButton(inputId = "clicks3",  label = "Show Bar Chart 1"),
+              actionButton(inputId = "clicks4",  label = "Show Bar Chart 2"),
+              plotOutput("distPlot3"),
+              plotOutput("distPlot4")
       ),
       
       # Fourth tab content
-      tabItem(tabName = "map",
-              leafletOutput("map")
+      tabItem(tabName = "CrossTab",
+              sidebarPanel(
+                
+                sliderInput("KPI1", "Difference between literacy rates of 2010 and 2000", 
+                            min = -30, max = 30,  value = 0),
+            
+              
+                actionButton(inputId = "clicks5",  label = "Click me")
+              ),
+              plotOutput("distPlot5")
       ),
       
       # Fifth tab content

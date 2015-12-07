@@ -92,54 +92,157 @@ shinyServer(function(input, output) {
   })
   # Begin code for Second Tab:
   
-
-  
-  # Begin code for Third Tab:
-  
   df3 <- eventReactive(input$clicks3, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
-                                                                                 """select region || \\\' \\\' || \\\'Sales\\\' as measure_names, sum(sales) as measure_values from SUPERSTORE_SALES_ORDERS
-                                                                                 where country_region = \\\'United States of America\\\'
-                                                                                 group by region
-                                                                                 union all
-                                                                                 select market || \\\' \\\' || \\\'Coffee_Sales\\\' as measure_names, sum(coffee_sales) as measure_values from COFFEE_CHAIN
-                                                                                 group by market
-                                                                                 order by 1;"""
-                                                                                 ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_UTEid', PASS='orcl_UTEid', 
+                                                                                 """select country_name, X2012-X2002 as calc
+                                                                                    from edudata
+                                                                                 where  indicator_name = \\\'Children out of school, primary\\\' and X2012-X2002 > 100000
+                                                                                 order by calc desc;"""
+                                                                                 ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_gmg954', PASS='orcl_gmg954', 
                                                                                                    MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
   })
   
-  output$distPlot3 <- renderPlot(height=1000, width=2000, {
+  df4 <- eventReactive(input$clicks4, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
+                                                                                 """select country_name, X2012-X2002 as calc
+                                                                                 from edudata
+                                                                                 where  indicator_name = \\\'Children out of school, primary\\\' and X2012-X2002 < -3000000
+                                                                                 order by calc desc;"""
+                                                                                 ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_gmg954', PASS='orcl_gmg954', 
+                                                                                                   MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
+  })
+    
+  
+  output$distPlot3 <- renderPlot(height=450, width=1400, {
     plot3 <- ggplot() + 
       coord_cartesian() + 
       scale_x_discrete() +
       scale_y_continuous() +
       #facet_wrap(~CLARITY, ncol=1) +
-      labs(title='Blending 2 Data Sources') +
-      labs(x=paste("Region Sales"), y=paste("Sum of Sales")) +
+      labs(title='Number of additional children out of school since 2002 to 2012 ( > 100,000)') +
+      labs(x=paste("Country Name"), y=paste("Difference between 2012 and 2002")) +
       layer(data=df3(), 
-            mapping=aes(x=MEASURE_NAMES, y=MEASURE_VALUES), 
+            mapping=aes(x=COUNTRY_NAME, y=CALC), 
             stat="identity", 
             stat_params=list(), 
             geom="bar",
-            geom_params=list(colour="blue"), 
+            geom_params=list(colour=NA), 
             position=position_identity()
       ) + coord_flip() +
       layer(data=df3(), 
-            mapping=aes(x=MEASURE_NAMES, y=MEASURE_VALUES, label=round(MEASURE_VALUES)), 
+            mapping=aes(x=COUNTRY_NAME, y=CALC, label=(CALC)), 
             stat="identity", 
             stat_params=list(), 
             geom="text",
             geom_params=list(colour="black", hjust=-0.5), 
-            position=position_identity()
-      )
+            position=position_identity()) 
     plot3
   })
   
-  # Begin code for Fourth Tab:
-  output$map <- renderLeaflet({leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17) %>% addPopups(-93.65, 42.0285, 'Here is the Department of Statistics, ISU')
+
+  
+  output$distPlot4 <- renderPlot(height=450, width=1400, {
+    plot4 <- ggplot() + 
+      coord_cartesian() + 
+      scale_x_discrete() +
+      scale_y_continuous() +
+      #facet_wrap(~CLARITY, ncol=1) +
+      labs(title='Number of additional children out of school since 2002 to 2012 ( < 3,000,000)') +
+      labs(x=paste("Country Name"), y=paste("Difference between 2012 and 2002")) +
+      layer(data=df4(), 
+            mapping=aes(x=COUNTRY_NAME, y=CALC), 
+            stat="identity", 
+            stat_params=list(), 
+            geom="bar",
+            geom_params=list(colour=NA), 
+            position=position_identity()
+      ) + coord_flip() +
+      layer(data=df4(), 
+            mapping=aes(x=COUNTRY_NAME, y=CALC, label=(CALC)), 
+            stat="identity", 
+            stat_params=list(), 
+            geom="text",
+            geom_params=list(colour="black", hjust=+1.25), 
+            position=position_identity()) 
+    plot4
   })
   
-  # Begin code for Fifth Tab:
-  output$table <- renderDataTable({datatable(df1())
+
+  observeEvent(input$clicks3, {
+    print(as.numeric(input$clicks3))
   })
-})
+  
+  observeEvent(input$clicks4, {
+    print(as.numeric(input$clicks4))
+  })
+  
+  
+  # Begin code for Third Tab:
+  
+  KPI_MidVal <- reactive({input$KPI1})     
+  
+  rv <- reactiveValues(alpha = 0.50)
+  
+  
+ 
+  
+  df5 <- eventReactive(input$clicks2, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
+                                                                                 "  select country_name, indicator_name, kpi as diff,
+                                                                                  case
+                                                                                  when kpi < "p1" then \\\'03 Low\\\'
+                                                                                 
+                                                                                 else \\\'01 High\\\'
+                                                                                 end kpi
+                                                                                  from(
+                                                                                 select country_name, X2010-X2000 as kpi, indicator_name
+                                                                                 from edudata
+                                                                                 where indicator_name like \\\'%Literacy rate, youth%\\\' and X2010-X2000 is not null
+                                                                                 order by kpi desc);"
+                                                                                 ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_gmg954', PASS='orcl_gmg954', 
+                                                                                                   MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON', p1=KPI_MidVal(), verbose = TRUE)))
+  )})
+  
+  
+  output$distPlot5 <- renderPlot(height=700, width=1500,{             
+    
+    
+    plot5 <-  ggplot() + 
+      coord_cartesian() + 
+      scale_x_discrete() +
+      scale_y_discrete() +
+      labs(title=isolate(input$title)) +
+      labs(x=paste("INDICATOR_NAME"), y=paste("COUNTRY_NAME")) +
+      layer(data=df5(), 
+            mapping=aes(x=INDICATOR_NAME, y=COUNTRY_NAME, label=DIFF), 
+            stat="identity", 
+            stat_params=list(), 
+            geom="text",
+            geom_params=list(colour="black"), 
+            position=position_identity()
+      ) +
+      layer(data=df5(), 
+            mapping=aes(x=INDICATOR_NAME, y=COUNTRY_NAME, fill=DIFF), 
+            stat="identity", 
+            stat_params=list(), 
+            geom="tile",
+            geom_params=list(alpha=rv$alpha), 
+            position=position_identity()
+      )
+    plot5
+  })
+
+  
+  observeEvent(input$clicks5, {
+    print(as.numeric(input$clicks5))
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+}
+)

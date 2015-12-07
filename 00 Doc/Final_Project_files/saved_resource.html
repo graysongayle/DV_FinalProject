@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://internal.shinyapps.io/graysong/Final_Project/?initialWidth=1920&childId=shinyapp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="_w_86ca9048/">--><base href=".">
+    <script type="text/javascript">
+(function() {
+  // http://stackoverflow.com/questions/10964966/detect-ie-version-in-javascript
+  function isIE () {
+    var myNav = navigator.userAgent.toLowerCase();
+    return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+  }
+  
+  if (isIE() === 8 || isIE() === 9){
+    // Set an absolute base href.
+    baseURL = document.URL;
+    baseURL = baseURL.substring(0, baseURL.lastIndexOf('/'));
+    document.getElementsByTagName('base')[0].setAttribute('href', baseURL + '/_w_86ca9048/');
+  }
+})();
+</script>
+  
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.11.0];shiny[0.12.2];font-awesome[4.2.0];ionrangeslider[2.0.12];strftime[0.9.2];datatables[1.10.5];datatables-bootstrap[1.10.5];bootstrap[3.3.1];AdminLTE[2.0.6];shinydashboard[0.5.1]</script>
+<script src="json2-min.js"></script>
+<script src="jquery.min(1).js"></script>
+<link href="shiny.css" rel="stylesheet">
+<script src="shiny.min.js"></script>
+<link href="font-awesome.min.css" rel="stylesheet">
+<link href="ion.rangeSlider.css" rel="stylesheet">
+<link href="ion.rangeSlider.skinShiny.css" rel="stylesheet">
+<script src="ion.rangeSlider.min.js"></script>
+<script src="strftime-min.js"></script>
+<script src="jquery.dataTables.min.js"></script>
+<link href="dataTables.bootstrap.css" rel="stylesheet">
+<link href="dataTables.extra.css" rel="stylesheet">
+<script src="dataTables.bootstrap.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="bootstrap.min(1).css" rel="stylesheet">
+<script src="bootstrap.min(2).js"></script>
+<script src="html5shiv.min.js"></script>
+<script src="respond.min.js"></script>
+<link href="AdminLTE.min.css" rel="stylesheet">
+<link href="_all-skins.min.css" rel="stylesheet">
+<script src="app.min.js"></script>
+<link href="shinydashboard.css" rel="stylesheet">
+<script src="shinydashboard.js"></script>
+  <title></title>
+<script src="sockjs-0.3.min.js"></script>
+<script src="rstudio-connect.js"></script>
+<link rel="stylesheet" type="text/css" href="rstudio-connect.css">
+
+<link rel="stylesheet" type="text/css" href="misc.css"></head>
+<body class="skin-blue disconnected" style="min-height: 611px;" marginheight="0">
+<script>
+//<![CDATA[
+    var shinyapps_app_id=72375;
+    var shinyapps_static_url="https://dq3p0g5ijakv8.cloudfront.net/assets/build-62";
+//]]>
+</script>
+<script src="shinyapps.js"></script>
+
+  <div class="wrapper">
+    <header class="main-header">
+      <span class="logo"></span>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <span style="display:none;">
+          <i class="fa fa-bars"></i>
+        </span>
+        <a href="https://internal.shinyapps.io/graysong/Final_Project/_w_86ca9048/#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav"></ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="https://internal.shinyapps.io/graysong/Final_Project/_w_86ca9048/#shiny-tab-Scatterplot" data-toggle="tab" data-value="Scatterplot" aria-expanded="true">
+              <i class="fa fa-dashboard"></i>
+              <span>ST Ratio's Scatterplots</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://internal.shinyapps.io/graysong/Final_Project/_w_86ca9048/#shiny-tab-Barchart" data-toggle="tab" data-value="Barchart">
+              <i class="fa fa-th"></i>
+              <span># of Ch. out of School BC</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://internal.shinyapps.io/graysong/Final_Project/_w_86ca9048/#shiny-tab-CrossTab" data-toggle="tab" data-value="CrossTab">
+              <i class="fa fa-th"></i>
+              <span>CrossTab</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 874px;">
+      <section class="content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="shiny-tab-Scatterplot">
+            <button id="clicks1" type="button" class="btn btn-default action-button shiny-bound-input">Show Scatter Plot 1</button>
+            <button id="clicks2" type="button" class="btn btn-default action-button shiny-bound-input">Show Scatter Plot 2</button>
+            <div id="distPlot1" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"></div>
+            <div id="distPlot2" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-Barchart">
+            <button id="clicks3" type="button" class="btn btn-default action-button shiny-bound-input">Show Bar Chart 1</button>
+            <button id="clicks4" type="button" class="btn btn-default action-button shiny-bound-input">Show Bar Chart 2</button>
+            <div id="distPlot3" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"></div>
+            <div id="distPlot4" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-CrossTab">
+            <div class="col-sm-4">
+              <form class="well">
+                <div class="form-group shiny-input-container">
+                  <label class="control-label" for="KPI1">Difference between literacy rates of 2010 and 2000</label>
+                  <span class="irs js-irs-0 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="-1"><span class="irs-line-left"></span><span class="irs-line-mid"></span><span class="irs-line-right"></span></span><span class="irs-min">-30</span><span class="irs-max">30</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single">0</span></span><span class="irs-grid"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%">-30</span><span class="irs-grid-pol small" style="left: 6.666666667%"></span><span class="irs-grid-pol small" style="left: 3.333333333%"></span><span class="irs-grid-pol" style="left: 10%"></span><span class="irs-grid-text js-grid-text-1" style="left: 10%; visibility: hidden;">-24</span><span class="irs-grid-pol small" style="left: 16.666666667%"></span><span class="irs-grid-pol small" style="left: 13.333333333%"></span><span class="irs-grid-pol" style="left: 20%"></span><span class="irs-grid-text js-grid-text-2" style="left: 20%; visibility: hidden;">-18</span><span class="irs-grid-pol small" style="left: 26.666666667%"></span><span class="irs-grid-pol small" style="left: 23.333333333%"></span><span class="irs-grid-pol" style="left: 30%"></span><span class="irs-grid-text js-grid-text-3" style="left: 30%; visibility: hidden;">-12</span><span class="irs-grid-pol small" style="left: 36.666666667%"></span><span class="irs-grid-pol small" style="left: 33.333333333%"></span><span class="irs-grid-pol" style="left: 40%"></span><span class="irs-grid-text js-grid-text-4" style="left: 40%">-6</span><span class="irs-grid-pol small" style="left: 46.666666667%"></span><span class="irs-grid-pol small" style="left: 43.333333333%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-5" style="left: 50%; visibility: hidden;">0</span><span class="irs-grid-pol small" style="left: 56.666666667%"></span><span class="irs-grid-pol small" style="left: 53.333333333%"></span><span class="irs-grid-pol" style="left: 60%"></span><span class="irs-grid-text js-grid-text-6" style="left: 60%; visibility: hidden;">6</span><span class="irs-grid-pol small" style="left: 66.666666667%"></span><span class="irs-grid-pol small" style="left: 63.333333333%"></span><span class="irs-grid-pol" style="left: 70%"></span><span class="irs-grid-text js-grid-text-7" style="left: 70%; visibility: hidden;">12</span><span class="irs-grid-pol small" style="left: 76.666666667%"></span><span class="irs-grid-pol small" style="left: 73.333333333%"></span><span class="irs-grid-pol" style="left: 80%"></span><span class="irs-grid-text js-grid-text-8" style="left: 80%">18</span><span class="irs-grid-pol small" style="left: 86.666666667%"></span><span class="irs-grid-pol small" style="left: 83.333333333%"></span><span class="irs-grid-pol" style="left: 90%"></span><span class="irs-grid-text js-grid-text-9" style="left: 90%; visibility: hidden;">24</span><span class="irs-grid-pol small" style="left: 96.666666667%"></span><span class="irs-grid-pol small" style="left: 93.333333333%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-10" style="left: 100%; visibility: hidden;">30</span></span><span class="irs-bar"></span><span class="irs-bar-edge"></span><span class="irs-shadow shadow-single"></span><span class="irs-slider single"></span></span><input class="js-range-slider irs-hidden-input shiny-bound-input" id="KPI1" data-min="-30" data-max="30" data-from="0" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="1.66666666666667" data-drag-interval="true" data-data-type="number" readonly="">
+                </div>
+                <button id="clicks5" type="button" class="btn btn-default action-button shiny-bound-input">Click me</button>
+              </form>
+            </div>
+            <div id="distPlot5" class="shiny-plot-output shiny-bound-output" style="width: 100% ; height: 400px"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-table">
+            <div id="table" class="shiny-datatable-output shiny-bound-output"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body></html>
